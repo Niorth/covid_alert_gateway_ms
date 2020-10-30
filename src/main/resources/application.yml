@@ -1,0 +1,27 @@
+server:
+  port: 3000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: userService
+          uri: http://localhost:3001/
+          predicates:
+            - Path=/api/v1/user/**
+        - id: covidStateService
+          uri: http://localhost:3002/
+          predicates:
+            - Path=/api/v1/covidstate/**
+        - id: positionService
+          uri: http://localhost:3003/
+          predicates:
+            - Path=/api/v1/position/**
+        - id: notificationService
+          uri: http://localhost:3004/
+          predicates:
+            - Path=/api/v1/notification/**
+        - id: suspiciousLocationService
+          uri: http://localhost:3005/
+          predicates:
+            - Path=/api/v1/suslocation/**

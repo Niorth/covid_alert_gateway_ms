@@ -8,7 +8,7 @@ spring:
         - id: userService
           uri: http://localhost:3001/
           predicates:
-            - Path=/api/v1/user/**
+            - Path=/person/**
         - id: covidStateService
           uri: http://localhost:3002/
           predicates:
@@ -24,4 +24,4 @@ spring:
         - id: suspiciousLocationService
           uri: http://localhost:3005/
           predicates:
-            - Path=/api/v1/suslocation/**
+            - Path=/suslocation/**
